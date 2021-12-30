@@ -1,4 +1,10 @@
-﻿using Boilerplate.Common.Repository
+﻿using Boilerplate.API.Constants;
+using Boilerplate.Common.Config;
+using Boilerplate.Common.Repository;
+using Boilerplate.DataAccess.EFCustomizations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,13 +13,6 @@ var configuration = builder.Configuration;
 
 
 services.Configure<ApplicationConfig>(configuration);
-services.AddControllers();
-services.Add(ServiceDescriptor.Singleton(typeof(IOptionsSnapshot<>), typeof(OptionsManager<>)));
-services.AddDistributedMemoryCache();
-services.AddDbContext<IDbContext>
-
-
-var app = builder.Build();
 
 builder.Host.ConfigureAppConfiguration(options =>
 {
@@ -21,10 +20,27 @@ builder.Host.ConfigureAppConfiguration(options =>
     //options.AddUserSecrets<AuthController>(true);
 });
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+services.AddControllers();
+services.Add(ServiceDescriptor.Singleton(typeof(IOptionsSnapshot<>), typeof(OptionsManager<>)));
+services.AddDistributedMemoryCache();
+services.AddDbContext<IBoilerplateDbContext, BoilerplateDbContext>(options =>
 {
-    app.UseExceptionHandler("/Error");
+    options.UseSqlServer(configuration.GetConnectionString(ConnectionStringNames.SpaceRunnerTrainingDbContext));
+});
+
+// Configure the HTTP request pipeline.
+var app = builder.Build();
+
+var buildServices = app.Services;
+using (var scope = buildServices.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<BoilerplateDbContext>();
+    dbContext.Database.Migrate();
+
+    if (app.Environment.IsDevelopment())
+    {
+        //dbContext.Initialize()
+    }
 }
 
 app.UseHttpsRedirection();
