@@ -1,5 +1,6 @@
 ﻿using Boilerplate.API.Constants;
 using Boilerplate.API.Controllers;
+using Boilerplate.Business.Actions.Products;
 using Boilerplate.Common.Config;
 using Boilerplate.Common.Repository;
 using Boilerplate.DataAccess.EFCustomizations;
@@ -32,7 +33,7 @@ namespace Boilerplate.API
             {
                 options.UseSqlServer(configuration.GetConnectionString(ConnectionStringNames.BoilerplateDbContext));
             });
-
+            services.AddMediatR(c => c.RegisterServicesFromAssembly(typeof(CreateProductCommandHandler).Assembly));
             services.AddSwaggerGen();
         }
 

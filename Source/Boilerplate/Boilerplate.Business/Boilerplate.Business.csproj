@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Boilerplate.Common\Boilerplate.Common.csproj" />
+    <ProjectReference Include="..\Boilerplate.Shared.Common\Boilerplate.Shared.Common.csproj" />
+  </ItemGroup>
+
 </Project>

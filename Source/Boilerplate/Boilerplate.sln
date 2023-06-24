@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1700.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.API", "Boilerplate.API\Boilerplate.API.csproj", "{253CF8EB-327F-40C9-8B8D-4DC2EE5BD5E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boilerplate.API", "Boilerplate.API\Boilerplate.API.csproj", "{253CF8EB-327F-40C9-8B8D-4DC2EE5BD5E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.Business", "Boilerplate.Business\Boilerplate.Business.csproj", "{DCB24996-163A-4660-B41E-436F8A89DDEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boilerplate.Business", "Boilerplate.Business\Boilerplate.Business.csproj", "{DCB24996-163A-4660-B41E-436F8A89DDEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.DataAccess", "Boilerplate.DataAccess\Boilerplate.DataAccess.csproj", "{377FBF7D-8EE1-438E-9082-CE0FAEB8A015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boilerplate.DataAccess", "Boilerplate.DataAccess\Boilerplate.DataAccess.csproj", "{377FBF7D-8EE1-438E-9082-CE0FAEB8A015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.Common", "Boilerplate.Common\Boilerplate.Common.csproj", "{004B054B-C288-49BC-90EA-4205D6FEBDDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boilerplate.Common", "Boilerplate.Common\Boilerplate.Common.csproj", "{004B054B-C288-49BC-90EA-4205D6FEBDDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B93CAA89-D5C1-457D-A213-A0393E9965FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.Shared.Common", "Boilerplate.Shared.Common\Boilerplate.Shared.Common.csproj", "{9060824E-E267-4391-A9BC-9A9A96B50581}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{004B054B-C288-49BC-90EA-4205D6FEBDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{004B054B-C288-49BC-90EA-4205D6FEBDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{004B054B-C288-49BC-90EA-4205D6FEBDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9060824E-E267-4391-A9BC-9A9A96B50581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9060824E-E267-4391-A9BC-9A9A96B50581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9060824E-E267-4391-A9BC-9A9A96B50581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9060824E-E267-4391-A9BC-9A9A96B50581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9060824E-E267-4391-A9BC-9A9A96B50581} = {B93CAA89-D5C1-457D-A213-A0393E9965FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C417BCEA-59D0-4665-98EE-6C873C56FA3D}
