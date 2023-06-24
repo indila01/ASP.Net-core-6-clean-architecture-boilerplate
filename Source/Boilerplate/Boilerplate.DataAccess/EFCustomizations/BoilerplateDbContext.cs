@@ -22,6 +22,7 @@ namespace Boilerplate.DataAccess.EFCustomizations
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         public Task<int> SaveChangesAsync() => SaveChangesAsync();
     }

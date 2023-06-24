@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Boilerplate.Common.Repository
 {
-	public interface IBoilerplateDbContext: IUserRepository, IUnitOfWork
+	public interface IBoilerplateDbContext: IUserRepository,IProductRepository, IUnitOfWork
 	{
 	}
 }
