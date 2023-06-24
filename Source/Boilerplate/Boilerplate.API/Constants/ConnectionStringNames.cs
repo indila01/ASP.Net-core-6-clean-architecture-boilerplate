@@ -2,6 +2,6 @@
 {
     public static class ConnectionStringNames
     {
-        public const string SpaceRunnerTrainingDbContext = "dbContext";
+        public const string BoilerplateDbContext = "dbContext";
     }
 }
