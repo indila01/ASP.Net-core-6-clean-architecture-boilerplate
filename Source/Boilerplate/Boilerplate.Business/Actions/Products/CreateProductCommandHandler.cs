@@ -19,7 +19,7 @@ namespace Boilerplate.Business.Actions.Products
         }
         public async Task<CreateProductCommandResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var productDto = request.Product;
         }
     }
 

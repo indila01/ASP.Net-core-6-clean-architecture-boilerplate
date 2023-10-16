@@ -9,5 +9,7 @@ namespace Boilerplate.Common.Repository
 
         Task<List<Product>> GetProducts(string? productName);
 
+        Task<Product> AddProduct();
+
     }
 }
